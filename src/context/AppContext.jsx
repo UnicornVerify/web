@@ -26,7 +26,7 @@ export const AppContextProvider = ({ children }) => {
     // Fatch Admin Status
     const authUser = async () => {
         try {
-            const { data } = await axios.get('api/user/auth');
+            const { data } = await axios.get('/api/user/auth');
             if (data.success) {
                 setUser(data.user);
             }
@@ -38,7 +38,7 @@ export const AppContextProvider = ({ children }) => {
     // Fatch Admin Status
     const authAdmin = async () => {
         try {
-            const { data } = await axios.get('api/admin/auth');
+            const { data } = await axios.get('/api/admin/auth');
             if (data.success) {
                 setAdmin(data.admin);
                 setBanUser(data.admin.banUser);
@@ -73,7 +73,6 @@ export const AppContextProvider = ({ children }) => {
     const getAllDocumentsByAdmin = async () => {
         try {
             const { data } = await axios.get('/api/document/list');
-            
             if (data?.success) {
                 setDocumentList(data?.document);
 

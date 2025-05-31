@@ -16,7 +16,7 @@ const AdminLayout = () => {
 
     const logout = async () => {
         try {
-            const { data } = await axios.get("api/admin/logout");
+            const { data } = await axios.get("/api/admin/logout");
             if (data.success) {
                 toast.success(data.message);
                 setAdmin(null);
